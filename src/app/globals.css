@@ -10,3 +10,15 @@
 	--color-border: #484d4e;
 	--background-price: #313637;
 }
+
+.info-banner::before {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 16px;
+	left: 20px;
+	width: 24px;
+	height: 26px;
+	margin-top: 2px;
+	background: url('/alert.svg') no-repeat center / contain;
+}

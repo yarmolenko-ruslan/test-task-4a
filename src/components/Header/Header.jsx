@@ -3,7 +3,7 @@ import { CountdownTimer } from '../CountdownTimer';
 export const Header = () => {
 	return (
 		<header>
-			<CountdownTimer initialSeconds={2} />
+			<CountdownTimer initialSeconds={120} />
 		</header>
 	);
 };

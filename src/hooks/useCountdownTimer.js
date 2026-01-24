@@ -1,7 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-export function useCountdownTimer({ initialSeconds, dangerSeconds = 30 }) {
+export function useCountdownTimer({
+	initialSeconds = 120,
+	dangerSeconds = 30,
+}) {
 	const [time, setTime] = useState(initialSeconds);
 
 	useEffect(() => {
