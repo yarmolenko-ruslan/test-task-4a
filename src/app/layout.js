@@ -1,4 +1,6 @@
-import { Montserrat, Raleway } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -15,7 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='ru' className={montserrat.variable}>
-			<body className='antialiased'>{children}</body>
+			<body className='text-white bg-(--background)'>
+				<Header />
+				<main className='max-w-311 mx-auto my-0 px-3.5'>{children}</main>
+				<Footer />
+			</body>
 		</html>
 	);
 }

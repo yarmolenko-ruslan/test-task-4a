@@ -6,11 +6,7 @@
 	--color-yellow: #fdb056;
 	--color-yellow-two: #ffbb00;
 	--danger-color: #ff4e4e;
-}
-
-body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: var(--font-montserrat);
-	color: #fff;
+	--color-red: #fd5656;
+	--color-border: #484d4e;
+	--background-price: #313637;
 }
