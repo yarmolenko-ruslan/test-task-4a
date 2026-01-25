@@ -7,13 +7,8 @@ export function CountdownTimer({ initialSeconds }) {
 	});
 
 	return (
-		<section className='text-center bg-(--background-timer) pt-2 pb-0.75'>
-			<h2 className='text-2xl font-semibold tracking-[1.7px]'>
-				Успейте открыть пробную неделю
-			</h2>
-
-			<p
-				className={`
+		<p
+			className={`
           font-bold text-[40px] tracking-[1.7px]
           ${
 						isZero
@@ -23,10 +18,9 @@ export function CountdownTimer({ initialSeconds }) {
 								: 'text-(--color-yellow-two)'
 					}
         `}
-			>
-				{minutes.toString().padStart(2, '0')}:
-				{seconds.toString().padStart(2, '0')}
-			</p>
-		</section>
+		>
+			{minutes.toString().padStart(2, '0')}:
+			{seconds.toString().padStart(2, '0')}
+		</p>
 	);
 }

@@ -9,6 +9,7 @@
 	--color-red: #fd5656;
 	--color-border: #484d4e;
 	--background-price: #313637;
+	--color-border-checkbox: #606566;
 }
 
 .info-banner::before {
@@ -21,4 +22,13 @@
 	height: 26px;
 	margin-top: 2px;
 	background: url('/alert.svg') no-repeat center / contain;
+}
+
+@keyframes shimmer {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(200%);
+	}
 }
