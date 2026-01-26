@@ -2,10 +2,10 @@ export function Button({ type = 'button', className = '', children }) {
 	return (
 		<button
 			type={type}
-			className={`
+			className={`group
         relative overflow-hidden
         max-w-88 w-full text-black h-16.5 bg-(--color-yellow) cursor-pointer rounded-[20px]
-        text-[20px] font-bold mb-4 select-none
+        text-[20px] font-bold mb-4 select-none hover:bg-(--color-yellow-two) transition duration-500
         ${className}
       `}
 		>
@@ -19,7 +19,13 @@ export function Button({ type = 'button', className = '', children }) {
           -skew-x-12
         '
 			/>
-			<span className='relative z-10 select-none'>{children}</span>
+			<span
+				className='relative z-10 inline-block
+    transition-transform duration-500 ease-out
+    group-hover:scale-[1.1]'
+			>
+				{children}
+			</span>
 		</button>
 	);
 }

@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
+// Хук таймера, который можно переиспользовать где-то еще в приложении
 export function useCountdownTimer({
 	initialSeconds = 120,
 	dangerSeconds = 30,

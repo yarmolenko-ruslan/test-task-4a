@@ -1,10 +1,10 @@
-import { CountdownTimer } from '../CountdownTimer';
-
-export const Header = () => {
+export function Header() {
 	return (
-		<header className='bg-(--background-timer) text-center pt-2 pb-0.75'>
-			<h2 className='text-2xl font-semibold'>Успейте открыть пробную неделю</h2>
-			<CountdownTimer initialSeconds={120} />
+		<header>
+			<h1 className='font-bold text-[40px] py-10.5 tracking-[0.4px]'>
+				Выбери подходящий для себя{' '}
+				<span className='text-(--color-yellow)'>тариф</span>
+			</h1>
 		</header>
 	);
-};
+}

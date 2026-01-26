@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { PriceItem } from '../PriceItem';
 
 export function PriceList({ prices, defaultSelectedPeriod }) {
+	//
 	const incomingBestPeriod = prices.find(p => p.is_best)?.period ?? null;
 
 	const initial = defaultSelectedPeriod ?? prices[0]?.period ?? null;
