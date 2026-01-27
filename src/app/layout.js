@@ -1,6 +1,7 @@
 import { Montserrat, Raleway } from 'next/font/google';
-import localFont from 'next/font/local';
 import { Promotion } from '@/components/Promotion';
+import localFont from 'next/font/local';
+import { PromotionProvider } from '@/providers/PromotionProvider';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -37,8 +38,10 @@ export default function RootLayout({ children }) {
 			className={`${montserrat.variable} ${gilroy.variable} ${raleway.variable}`}
 		>
 			<body className='text-white bg-(--background) font-(family-name:--font-montserrat)'>
-				<Promotion />
-				<div className='max-w-311 mx-auto my-0 px-3.5'>{children}</div>
+				<PromotionProvider>
+					<Promotion />
+					<div className='max-w-311 mx-auto my-0 px-3.5'>{children}</div>
+				</PromotionProvider>
 			</body>
 		</html>
 	);

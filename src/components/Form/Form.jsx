@@ -6,7 +6,6 @@ import { InfoBanner } from '../InfoBanner';
 import { PriceList } from '../PriceList';
 
 export async function Form() {
-	// Делаем запрос к API для получения информации для карточек
 	const prices = await getPrices();
 
 	// Выбираем первый тариф по умолчанию (взят "period", поскольку есть 2 карточки с одинаковым "id")

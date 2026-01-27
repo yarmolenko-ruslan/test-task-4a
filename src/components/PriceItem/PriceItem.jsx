@@ -1,7 +1,14 @@
+'use client';
+
+import { usePromotion } from '@/hooks/usePromotion';
 import clsx from 'clsx';
 
 export function PriceItem({ price, selected, incomingBest, onSelect }) {
+	const { isPromotionActive } = usePromotion();
+
 	const discount = Math.round((1 - price.price / price.full_price) * 100);
+
+	const showDiscountUi = isPromotionActive;
 
 	return (
 		<li
@@ -15,25 +22,31 @@ export function PriceItem({ price, selected, incomingBest, onSelect }) {
 				{
 					'border-(--color-yellow)': selected,
 					'border-(--color-border)': !selected,
-					'xl:flex xl:gap-10 xl:items-center xl:col-span-3 xl:col-start-1 xl:max-w-3xl xl:h-48.5 xl:rounded-[34px] xl:pl-30.5 xl:pr-20 xl:pt-8 xl:pb-7.5':
+					'xl:col-span-3 xl:col-start-1 xl:max-w-3xl xl:h-48.5 xl:rounded-[34px] xl:pl-30.5 xl:pr-20 xl:pt-8 xl:pb-7.5':
 						incomingBest,
-					'xl:max-w-60 xl:h-83.75 xl:text-center xl:pt-17.5 xl:pb-5.75 xl:px-4.5':
+					'xl:max-w-60 xl:h-83.75 xl:text-center xl:pt-17.5 xl:pb-5.75 xl:px-4.5 xl:flex-col xl:items-center xl:gap-0':
 						!incomingBest,
 				},
 			)}
 		>
-			<span
-				className={clsx(
-					'absolute -top-0.5 py-0.5 w-10.5 md:w-12 h-5.75 rounded-br-md rounded-bl-md md:rounded-br-lg md:rounded-bl-lg bg-(--color-red) font-(--font-gilroy) text-[13px] md:text-[16px] px-1.5 ` xl:w-16.5 xl:h-9.75 xl:px-2 xl:py-1.25 xl:text-[22px] xl:rounded-bl-lg xl:rounded-br-lg',
-					{
-						'right-12.5 md:right-15.5 xl:left-12.5 xl:right-auto': incomingBest,
-						'right-7 md:right-8 xl:left-12.5 xl:right-auto xl:w-17.25':
-							!incomingBest,
-					},
-				)}
-			>
-				-{discount}%
-			</span>
+			{showDiscountUi && (
+				<span
+					className={clsx(
+						'absolute -top-0.5 py-0.5 w-10.5 md:w-12 h-5.75 rounded-br-md rounded-bl-md md:rounded-br-lg md:rounded-bl-lg bg-(--color-red) font-(--font-gilroy) text-[13px] md:text-[16px] px-1.5 xl:w-16.5 xl:h-9.75 xl:px-2 xl:py-1.25 xl:text-[22px] xl:rounded-bl-lg xl:rounded-br-lg transition-all duration-700',
+						{
+							'right-12.5 md:right-15.5 xl:left-12.5 xl:right-auto':
+								incomingBest,
+							'right-7 md:right-8 xl:left-12.5 xl:right-auto xl:w-17.25':
+								!incomingBest,
+							'opacity-100 translate-y-0': isPromotionActive,
+							'opacity-0 -translate-y-2 pointer-events-none':
+								!isPromotionActive,
+						},
+					)}
+				>
+					-{discount}%
+				</span>
+			)}
 
 			<div className='flex flex-col xl:block'>
 				<h3
@@ -48,19 +61,50 @@ export function PriceItem({ price, selected, incomingBest, onSelect }) {
 					{price.period}
 				</h3>
 
-				<strong
+				<div className='relative'>
+					<strong
+						className={clsx(
+							'block text-[30px] md:text-[34px] w-27.5 md:w-31.25 xl:w-45 font-semibold leading-none xl:text-[49px] transition-all duration-700',
+							{
+								'text-(--color-yellow)': selected,
+								'text-white': !selected,
+								'opacity-100 translate-y-0': isPromotionActive,
+								'opacity-0 -translate-y-2 pointer-events-none absolute left-0 top-0':
+									!isPromotionActive,
+							},
+						)}
+					>
+						{price.price} ₽
+					</strong>
+
+					<strong
+						className={clsx(
+							'block text-[30px] md:text-[34px] w-30 md:w-32.5 xl:w-50 font-semibold leading-none xl:text-[49px] transition-all duration-700',
+							{
+								'text-(--color-yellow)': selected,
+								'text-white': !selected,
+								'opacity-0 translate-y-2 pointer-events-none absolute left-0 top-0':
+									isPromotionActive,
+								'opacity-100 translate-y-0': !isPromotionActive,
+							},
+						)}
+					>
+						{price.full_price} ₽
+					</strong>
+				</div>
+
+				<del
 					className={clsx(
-						'block text-[30px] md:text-[34px] w-27.5 md:w-31.25 xl:w-45 font-semibold leading-none xl:text-[49px]',
+						'text-[14px] ml-12.5 xl:block text-[#919191] xl:text-[24px] leading-[1.2] xl:ml-19.5 transition-all duration-700',
+						'block h-[1.2em] md:h-[1.2em] xl:h-[1.2em] overflow-hidden',
 						{
-							'text-(--color-yellow)': selected,
-							'text-white': !selected,
+							'opacity-100 translate-y-0': isPromotionActive,
+							'opacity-0 -translate-y-1 pointer-events-none':
+								!isPromotionActive,
 						},
 					)}
+					aria-hidden={!isPromotionActive}
 				>
-					{price.price} ₽
-				</strong>
-
-				<del className='text-[14px] ml-12.5 xl:block text-[#919191] xl:text-[24px] leading-[1.2] xl:ml-19.5'>
 					{price.full_price} ₽
 				</del>
 			</div>
