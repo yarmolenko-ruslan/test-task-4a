@@ -8,9 +8,9 @@ export function MainImage() {
 				width={382}
 				height={784}
 				alt='Спортсмен'
-				className='w-[99px] h-[200px] mx-auto md:w-[124px] md:h-[250px] xl:w-[382px] xl:h-[784px]'
+				className='w-24.75 h-50 mx-auto md:w-31 md:h-62.5 xl:w-95.5 xl:h-196'
 			/>
-			<div className='pointer-events-none absolute left-0 right-0 bottom-0 h-[21px] md:h-[26px] xl:h-28 bg-linear-to-b from-transparent to-(--background)' />
+			<div className='pointer-events-none absolute left-0 right-0 bottom-0 h-5.25 md:h-6.5 xl:h-28 bg-linear-to-b from-transparent to-(--background)' />
 		</section>
 	);
 }

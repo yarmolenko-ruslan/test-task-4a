@@ -17,7 +17,7 @@ export function PriceList({ prices, defaultSelectedPeriod }) {
 	});
 
 	return (
-		<ul className='flex flex-col mb-[10px] gap-y-[6px] md:gap-y-[8px] xl:grid xl:grid-cols-3 xl:gap-x-3.5 xl:gap-[12px] xl:mb-5'>
+		<ul className='flex flex-col mb-2.5 gap-y-1.5 md:gap-y-2 xl:grid xl:grid-cols-3 xl:gap-x-3.5 xl:gap-3 xl:mb-5'>
 			{sortedPrices.map(price => (
 				<PriceItem
 					// Здесь взят period за ключ, поскольку в массиве 2 карточки с одинаковыми id
