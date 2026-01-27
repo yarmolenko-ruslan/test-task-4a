@@ -24,7 +24,7 @@ export function PriceItem({ price, selected, incomingBest, onSelect }) {
 		>
 			<span
 				className={clsx(
-					'absolute -top-0.5 w-10.5 md:w-12 h-5.75 rounded-br-md rounded-bl-md md:rounded-br-lg md:rounded-bl-lg bg-(--color-red) font-(--font-gilroy) text-[13px] md:text-[16px] px-1.5 py-0.75 xl:w-16.5 xl:h-9.75 xl:px-2 xl:py-1.25 xl:text-[22px] xl:rounded-bl-lg xl:rounded-br-lg',
+					'absolute -top-0.5 py-0.5 w-10.5 md:w-12 h-5.75 rounded-br-md rounded-bl-md md:rounded-br-lg md:rounded-bl-lg bg-(--color-red) font-(--font-gilroy) text-[13px] md:text-[16px] px-1.5 ` xl:w-16.5 xl:h-9.75 xl:px-2 xl:py-1.25 xl:text-[22px] xl:rounded-bl-lg xl:rounded-br-lg',
 					{
 						'right-12.5 md:right-15.5 xl:left-12.5 xl:right-auto': incomingBest,
 						'right-7 md:right-8 xl:left-12.5 xl:right-auto xl:w-17.25':
