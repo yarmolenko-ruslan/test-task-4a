@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 		>
 			<body className='text-white bg-(--background) font-(family-name:--font-montserrat)'>
 				<Promotion />
-				<main className='max-w-311 mx-auto my-0 px-3.5'>{children}</main>
+				<div className='max-w-311 mx-auto my-0 px-3.5'>{children}</div>
 			</body>
 		</html>
 	);

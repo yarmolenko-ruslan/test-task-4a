@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@config "../../tailwind.config.js";
 
 :root {
 	--background: #232829;
@@ -22,6 +23,20 @@
 	height: 26px;
 	margin-top: 2px;
 	background: url('/alert.svg') no-repeat center / contain;
+}
+
+@media (max-width: 321px) {
+	.info-banner::before {
+		top: 12px;
+		left: 13px;
+	}
+}
+
+@media (max-width: 375px) {
+	.info-banner::before {
+		top: 11px;
+		left: 13px;
+	}
 }
 
 @keyframes shimmer {

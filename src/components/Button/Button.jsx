@@ -3,9 +3,8 @@ export function Button({ type = 'button', className = '', children }) {
 		<button
 			type={type}
 			className={`group
-        relative overflow-hidden
-        max-w-88 w-full text-black h-16.5 bg-(--color-yellow) cursor-pointer rounded-[20px]
-        text-[20px] font-bold mb-4 select-none hover:bg-(--color-yellow-two) transition duration-500
+        relative overflow-hidden 
+        xl:max-w-88 w-full text-black rounded-[20px] h-[55px] md:h-[63px] xl:h-16.5 bg-(--color-yellow) cursor-pointer xl:rounded-[20px] text-[18px] xl:text-[20px] font-bold mb-[10px] md:mb-[20px] xl:mb-4 select-none hover:bg-(--color-yellow-two) transition duration-500
         ${className}
       `}
 		>

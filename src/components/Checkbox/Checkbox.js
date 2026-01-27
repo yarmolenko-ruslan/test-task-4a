@@ -13,7 +13,10 @@ export function Checkbox({
 	const [invalid, setInvalid] = useState(false);
 
 	return (
-		<label htmlFor={id} className='flex items-center gap-3 select-none mb-4'>
+		<label
+			htmlFor={id}
+			className='flex items-start xl:items-center gap-[10px] xl:gap-3 select-none mb-[15px] md:mb-[19px] xl:mb-4'
+		>
 			<input
 				id={id}
 				name={name}
@@ -36,7 +39,7 @@ export function Checkbox({
 			>
 				<Image src='/check-mark.svg' width={20} height={15} alt='Mark' />
 			</span>
-			<span className='text-[16px] leading-[1.1] defaultChecked max-w-151.25 text-[#CDCDCD]'>
+			<span className='max-w-[252px] md:max-w-[300px] text-[12px] leading-[1.2] xl:text-[16px] xl:leading-[1.1] defaultChecked xl:max-w-151.25 text-[#CDCDCD]'>
 				{children}
 			</span>
 		</label>

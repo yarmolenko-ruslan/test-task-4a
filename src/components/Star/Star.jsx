@@ -14,7 +14,7 @@ export function Star({ className, isZero, isDanger }) {
 			height={14}
 			alt=''
 			aria-hidden
-			className={className}
+			className={`absolute ${className}`}
 		/>
 	);
 }

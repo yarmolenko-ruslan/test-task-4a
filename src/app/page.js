@@ -7,10 +7,10 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<section className='flex justify-between items-center gap-21.5 pt-14.5 pb-16'>
+			<main className='xl:flex xl:justify-between xl:items-center xl:gap-21.5 xl:pt-14.5 xl:pb-[43px]'>
 				<MainImage />
 				<Form />
-			</section>
+			</main>
 			<Footer days={30} />
 		</>
 	);

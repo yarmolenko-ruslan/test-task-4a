@@ -5,12 +5,12 @@ export function MainImage() {
 		<section className='relative'>
 			<Image
 				src='/photo.png'
-				width={381}
-				height={767}
+				width={382}
+				height={784}
 				alt='Спортсмен'
-				className='mt-1.25'
+				className='w-[99px] h-[200px] mx-auto md:w-[124px] md:h-[250px] xl:w-[382px] xl:h-[784px]'
 			/>
-			<div className='pointer-events-none absolute left-0 right-0 bottom-0 h-28 bg-linear-to-b from-transparent to-(--background)' />
+			<div className='pointer-events-none absolute left-0 right-0 bottom-0 h-[21px] md:h-[26px] xl:h-28 bg-linear-to-b from-transparent to-(--background)' />
 		</section>
 	);
 }
