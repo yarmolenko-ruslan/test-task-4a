@@ -18,7 +18,7 @@ export function PriceItem({ price, selected, incomingBest, onSelect }) {
 			onKeyDown={e => e.key === 'Enter' && onSelect()}
 			aria-pressed={selected}
 			className={clsx(
-				'flex gap-7 md:gap-11.5 items-center h-29.5 md:h-32.75 w-full relative border-2 rounded-[20px] bg-(--background-price) cursor-pointer hover:scale-[1.03] transition duration-700 select-none pr-2.75 md:pr-5.5 pl-5 md:pl-7.5 py-5 xl:rounded-[40px]',
+				'flex gap-3.5 md:gap-11.5 items-center h-29.5 md:h-32.75 w-full relative border-2 rounded-[20px] bg-(--background-price) cursor-pointer hover:scale-[1.03] transition duration-700 select-none pr-2.75 md:pr-5.5 pl-5 md:pl-7.5 py-5 xl:rounded-[40px]',
 				{
 					'border-(--color-yellow)': selected,
 					'border-(--color-border)': !selected,
@@ -64,7 +64,7 @@ export function PriceItem({ price, selected, incomingBest, onSelect }) {
 				<div className='relative'>
 					<strong
 						className={clsx(
-							'block text-[30px] md:text-[34px] w-27.5 md:w-31.25 xl:w-45 font-semibold leading-none xl:text-[49px] transition-all duration-700',
+							'block text-[30px] md:text-[34px] w-33.75 md:w-35 xl:w-45 font-semibold leading-none xl:text-[49px] transition-all duration-700',
 							{
 								'text-(--color-yellow)': selected,
 								'text-white': !selected,
@@ -79,7 +79,7 @@ export function PriceItem({ price, selected, incomingBest, onSelect }) {
 
 					<strong
 						className={clsx(
-							'block text-[30px] md:text-[34px] w-30 md:w-32.5 xl:w-50 font-semibold leading-none xl:text-[49px] transition-all duration-700',
+							'block text-[30px] md:text-[34px] w-33.75 md:w-35 xl:w-50 font-semibold leading-none xl:text-[49px] transition-all duration-700',
 							{
 								'text-(--color-yellow)': selected,
 								'text-white': !selected,

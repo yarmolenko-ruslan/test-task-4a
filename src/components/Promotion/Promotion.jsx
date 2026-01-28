@@ -22,7 +22,7 @@ export const Promotion = () => {
 					: 'Скидка закончилась'}
 			</h2>
 
-			<CountdownTimer initialSeconds={120} />
+			<CountdownTimer initialSeconds={2} />
 		</div>
 	);
 };
